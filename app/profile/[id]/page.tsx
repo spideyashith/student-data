@@ -14,8 +14,15 @@ type Profile = {
 
 /* Fetch Single Profile */
 async function getProfile(id: string): Promise<Profile | null> {
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+  if (!baseUrl) {
+    throw new Error("NEXT_PUBLIC_SITE_URL not defined");
+  }
+
   const res = await fetch(
-    `http://localhost:3000/api/profiles/${id}`,
+    `${baseUrl}/api/profiles/${id}`,
     { cache: "no-store" }
   );
 
@@ -31,7 +38,6 @@ export default async function ProfilePage(props: {
   params: Promise<{ id: string }>;
 }) {
 
-  /* Unwrap params */
   const params = await props.params;
   const id = params.id;
 
@@ -48,7 +54,6 @@ export default async function ProfilePage(props: {
   return (
     <main className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 p-8">
 
-      {/* Back Button */}
       <div className="max-w-3xl mx-auto mb-6">
 
         <Link
@@ -70,10 +75,8 @@ export default async function ProfilePage(props: {
 
       </div>
 
-      {/* Profile Card */}
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 border border-orange-100">
 
-        {/* Header */}
         <div className="text-center">
 
           <img
@@ -92,33 +95,25 @@ export default async function ProfilePage(props: {
 
         </div>
 
-        {/* Info Section */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
 
           <div>
-            <p className="font-semibold text-gray-700">
-              Email
-            </p>
+            <p className="font-semibold text-gray-700">Email</p>
             <p>{profile.email}</p>
           </div>
 
           <div>
-            <p className="font-semibold text-gray-700">
-              Phone
-            </p>
+            <p className="font-semibold text-gray-700">Phone</p>
             <p>{profile.phone}</p>
           </div>
 
           <div>
-            <p className="font-semibold text-gray-700">
-              Location
-            </p>
+            <p className="font-semibold text-gray-700">Location</p>
             <p>{profile.location}</p>
           </div>
 
         </div>
 
-        {/* About */}
         <div className="mt-6">
 
           <h3 className="font-semibold text-gray-800 mb-2">
