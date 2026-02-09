@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Profile Management Application
 
-## Getting Started
+A full-stack Profile Management Application built using Next.js and Tailwind CSS.
+The application displays student profiles and allows users to view detailed information.
 
-First, run the development server:
+This project was developed as part of an interview assignment.
 
-```bash
+---
+
+## 🚀 Features
+
+- Display student profile cards
+- View detailed profile details
+- Dynamic routing with Next.js
+- REST API using Next.js API Routes
+- Clean UI with Tailwind CSS
+- Deployed on Vercel
+
+---
+
+## 🛠 Tech Stack
+
+Frontend:
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+
+Backend:
+- Next.js API Routes
+
+Deployment:
+- Vercel
+
+---
+
+## 📁 Project Structure
+
+app/
+- page.tsx (Home Page)
+- profile/[id]/page.tsx (Profile Details)
+- api/profiles (APIs)
+
+data/
+- profiles.js (Mock Data)
+
+---
+
+## 🔗 API Endpoints
+
+GET /api/profiles  
+GET /api/profiles/:id
+
+---
+
+## 💾 Why Mock Data Instead of Real Database?
+
+This project uses mock data instead of a real database because:
+
+- The main focus was frontend, routing, and API integration.
+- It keeps the backend simple and fast.
+- It reduces complexity for a time-limited assignment.
+- The project structure allows easy future database integration.
+
+A real database like MongoDB or PostgreSQL can be added later if required.
+
+---
+
+## 🔄 Future Improvements
+
+- Add database integration
+- Add user authentication
+- Enable profile editing
+- Add search and pagination
+- Improve animations
+
+---
+
+## ⚙️ Setup Instructions
+
+1. Clone Repository
+
+git clone <your-repo-url>
+cd profile-management-app
+
+2. Install Dependencies
+
+npm install
+
+3. Add Environment Variable
+
+Create .env.local file:
+
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+4. Run Project
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌐 Live Demo
 
-To learn more about Next.js, take a look at the following resources:
+https://student-data-hq1p.vercel.app
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📌 Author
 
-## Deploy on Vercel
+Ash  
+Post Graduate Student  
+Aspiring Full-Stack Developer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+
+This project is created for educational and interview purposes.
