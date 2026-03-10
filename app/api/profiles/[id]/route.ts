@@ -6,13 +6,14 @@ import Profile from "@/models/Profile";
 
 export async function GET(
   req: Request,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
 
     await connectDB();
 
-    const id = context.params.id;
+    const params = await context.params;
+    const id = params.id;
 
     const profile = await Profile.findById(id);
 
