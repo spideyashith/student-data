@@ -1,3 +1,6 @@
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 import { connectDB } from "@/lib/mongodb";
 import Profile from "@/models/Profile";
 
@@ -26,7 +29,7 @@ export async function POST(req: Request) {
   const location = formData.get("location");
   const about = formData.get("about");
 
-  const file:any = formData.get("avatar");
+  const file: any = formData.get("avatar");
 
   let avatarPath = "";
 
