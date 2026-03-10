@@ -45,10 +45,10 @@ export default async function Home() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-        {profiles.map((profile: Profile) => (
+        {profiles.map((profile: any) => (
+        <div
+          key={profile._id}
 
-          <div
-            key={profile.id}
             className="bg-white rounded-2xl shadow-md p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-orange-100"
           >
 
@@ -69,7 +69,7 @@ export default async function Home() {
             <div className="mt-5 text-center">
 
               <Link
-                href={`/profile/${profile.id}`}
+                href={`/profile/${profile._id}`}
                 className="
                 inline-block
                 px-5
